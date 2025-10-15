@@ -61,17 +61,23 @@ This application requires that python be installed along with the packages for f
 3. [Install python.](https://www.geeksforgeeks.org/python/how-to-install-python-on-windows/)
 4. [Install pip.](https://www.geeksforgeeks.org/installation-guide/how-to-install-pip-on-windows/)
 3. Use the command "pip install ???", substituting the package name for "???", to install flask, flask_session, numpy, and pandas.
+        ```
         pip install pandas
+        ```
 
 # Usage
 ## How to Run
 To use this application:
 1. Open the command prompt window.
 2. Use the command "cd /???", substituting the folder location of the "stardata" folder for "???", to navigate to the folder.
+        ```
         cd /Documents/stardata
-3. Use the command "python app.py" to run the application. This will open a browser window.
+        ```
+4. Use the command "python app.py" to run the application. This will open a browser window.
+        ```
         python app.py
-4. When done using the application, ensure you go back to the command prompt window and press "CTRL+C". You will see the file location reappear when successful.
+        ```
+6. When done using the application, ensure you go back to the command prompt window and press "CTRL+C". You will see the file location reappear when successful.
 
 ## Database Selection
 The [AT-HYG stellar database](https://codeberg.org/astronexus/athyg.git) is over 400MB when decompressed, which is too large to include as a single file on GitHub even when compressed. This project as supplied includes a smaller subset of the database.
@@ -93,5 +99,6 @@ Future development paths for this project would make use of the additional stell
 
 # License
 The [AT-HYG stellar database](https://codeberg.org/astronexus/athyg.git) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
