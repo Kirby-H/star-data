@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calculate Distance
+{% endblock %}
+
+{% block main %}
+    <section class="container">
+        <h1>Select Stars</h1>
+        <p> {{ message }} </p>
+        <form action="/" method="post">
+            <table>
+                <tr>
+                    <th>Star</th>
+                    {% for key in catalogues.keys() %}
+                        <th style="font-size: 80%; width: 60%;">{{ key }}</th>
+                    {% endfor %}  
+                </tr>
+                <tr>
+                    <td><input list="proper" name="starA" placeholder="Sol" style="width: 96%;" type="text" value="Sol"></td>
+                    {% for key in catalogues.keys() %}
+                        <td><input name="catA" onclick="setDatalist('catA', 'starA')" type="radio" value={{ key }}></td>
+                    {% endfor %}   
+                </tr>           
+                <tr>
+                    <td><input list="proper" name="starB" placeholder="Proxima Centauri" style="width: 96%;" type="text" value="Proxima Centauri"></td>
+                    {% for key in catalogues.keys() %}
+                        <td><input name="catB" onclick="setDatalist('catB', 'starB')" type="radio" value={{ key }}></td>
+                    {% endfor %}
+                </tr>
+            </table>
+            <br>
+            <input name="year" placeholder="Enter Year" step="1" type="number" value="2000">
+            <br>
+            <button type="submit">Calculate Distance</button>
+
+            {% for key, value in datalists.items() %}    
+                <datalist id={{ key }}>
+                    {% for item in value %}
+                        <option value="{{ item }}">
+                    {% endfor %}
+                </datalist>
+            {% endfor %}
+        </form>
+    </section>
+
+    {% if starL == "" %}
+        <section class="container">
+            <h2>Catalogue Key</h2>
+            {% for key, value in catalogues.items() %}
+                <p>{{ key }}: {{ value.name }}</p>
+            {% endfor %}   
+        </section>
+    {% endif %}
+
+    {% if starL != "" %}
+        <section class="container half left">
+            <h2>{{ starL.ref }}</h2>
+            <hr>
+            <h3>Notes</h3>
+            <p>{{ starL.notes }}</p>
+            <br><hr>
+            <h3>Position</h3>
+            <table>
+                {% for key, value in starL.pos.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br>
+            <table>
+                {% for key, value in starL.xyz.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br><hr>
+            <h3>Magnitude and Spectral Type</h3>
+            <table>
+                {% for key, value in starL.magspec.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br><hr>
+            <h3>Catalogue IDs and Possible Habitability</h3>
+            <p>Potential Habitable Words: {{ starL.habitable }}</p>
+            <table>
+                {% for key, value in starL.ids.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </section>
+    {% endif %}
+
+    {% if starR != "" %}
+        <section class="container half right">
+            <h2>{{ starR.ref }}</h2>
+            <hr>
+            <h3>Notes</h3>
+            <p>{{ starR.notes }}</p>
+            <br><hr>
+            <h3>Position</h3>
+            <table>
+                {% for key, value in starR.pos.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br>
+            <table>
+                {% for key, value in starR.xyz.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br><hr>
+            <h3>Magnitude and Spectral Type</h3>
+            <table>
+                {% for key, value in starR.magspec.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br><hr>
+            <h3>Catalogue IDs and Possible Habitability</h3>
+            <p>Potential Habitable Words: {{ starR.habitable }}</p>
+            <table>
+                {% for key, value in starR.ids.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </section>
+    {% endif %}
+
+{% endblock %}

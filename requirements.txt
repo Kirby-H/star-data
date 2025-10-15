@@ -1,0 +1,13 @@
+INSTALL
+flask
+flask_session
+numpy
+pandas
+
+INCLUDE
+csv
+decimal
+glob
+json
+os
+sqlite3

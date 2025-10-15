@@ -1,0 +1,52 @@
+{
+"bf": {
+	"name": "Bayer-Flamsteed Combined Designation",
+	"append_cat": false,
+	"data_query": "SELECT * FROM catalogue WHERE flam = ? AND bayer = ? AND con = ?",
+	"list_query": "SELECT flam || ' ' || bayer || ' ' || con AS bf FROM catalogue WHERE bayer IS NOT NULL AND flam IS NOT NULL AND con IS NOT NULL ORDER BY con, flam, bayer;"},
+"gaia": {
+	"name":"Gaia Data Release 3 ID",
+	"append_cat": true,
+	"data_query": "SELECT * FROM catalogue WHERE gaia = ?;",
+	"list_query": "SELECT gaia FROM catalogue WHERE gaia IS NOT NULL ORDER BY gaia;"},
+"gl": {
+	"name":"Gliese ID",
+	"append_cat": false,
+	"data_query": "SELECT * FROM catalogue WHERE gl = ?;",
+	"list_query": "SELECT gl FROM catalogue WHERE gl IS NOT NULL ORDER BY gl;"},
+"hd": {
+	"name":"Henry Draper Catalog ID",
+	"append_cat": true,
+	"data_query": "SELECT * FROM catalogue WHERE hd = ?;",
+	"list_query": "SELECT hd FROM catalogue WHERE hd IS NOT NULL ORDER BY hd;"},
+"hip": {
+	"name":"Hipparcos ID",
+	"append_cat": true,
+	"data_query": "SELECT * FROM catalogue WHERE hip = ?;",
+	"list_query": "SELECT hip FROM catalogue WHERE hip IS NOT NULL ORDER BY hip;"},
+"hr": {
+	"name":"Harvard/Yale Bright Star Catalog ID",
+	"append_cat": true,
+	"data_query": "SELECT * FROM catalogue WHERE hr = ?;",
+	"list_query": "SELECT hr FROM catalogue WHERE hr IS NOT NULL ORDER BY hr;"},
+"hyg": {
+	"name":"HYG v3 Main Catalog ID",
+	"append_cat": true,
+	"data_query": "SELECT * FROM catalogue WHERE hyg = ?;",
+	"list_query": "SELECT hyg FROM catalogue WHERE hyg IS NOT NULL ORDER BY hyg;"},
+"id": {
+	"name": "AT-HYG ID",
+	"append_cat": true,
+	"data_query": "SELECT * FROM catalogue WHERE id = ?;",
+	"list_query": "SELECT id FROM catalogue ORDER BY id;"},
+"proper": {
+	"name":"Proper Name",
+	"append_cat": false,
+	"data_query": "SELECT * FROM catalogue WHERE proper = ?;",
+	"list_query": "SELECT proper FROM catalogue WHERE proper IS NOT NULL ORDER BY proper;"},
+"tyc": {
+	"name":"Tycho-2 ID",
+	"append_cat": true,
+	"data_query": "SELECT * FROM catalogue WHERE tyc = ?;",
+	"list_query": "SELECT tyc FROM catalogue WHERE tyc IS NOT NULL ORDER BY tyc;"}
+}

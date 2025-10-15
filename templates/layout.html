@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+
+        <link href = "/static/styles.css" rel = "stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anta&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <title>
+            Starmap {% block title %}{% endblock %}
+        </title>
+
+    </head>
+
+    <body>
+
+        <header>
+            <section class = "container">
+                <table>
+                    <tr>
+                        <th><a href="/">Calculate Distance</a></th>
+                        <th><a href="/stardata">See Star Data</a></th>
+                        <th><a href="/load">Update Database</a></th>
+                    </tr>
+                </table>
+            </section>
+        </header>
+
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer></footer>
+
+        <script>
+            window.addEventListener("load", () => {
+                const radios = document.querySelectorAll("input[type='radio']");
+                for (const radio of radios) {
+                    if (radio.value == "proper"){
+                        radio.checked = true;
+                    }
+                }
+            });
+
+            function setDatalist(cat, star) {
+                // get selected catalogue from radio buttons
+                const catalogues = document.querySelectorAll("input[name="+cat+"]");
+                let selectedCatalogue;
+                for (const catalogue of catalogues) {
+                    if (catalogue.checked) {
+                        selectedCatalogue = catalogue.value;
+                        break;
+                    }
+                }
+
+                // apply selected catalogue to text box
+                const starSelector = document.querySelector("input[name="+star+"]")
+                starSelector.setAttribute("list", selectedCatalogue);
+            }
+        </script>
+
+    </body>
+
+</html>
