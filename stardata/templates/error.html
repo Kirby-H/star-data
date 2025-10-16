@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error Encountered
+{% endblock %}
+
+{% block main %}
+    <section class = "container">
+        <h1>Error Encountered!</h1>
+        <p>Sorry, the following error was encountered when processing your request:</p>
+        <p> {{ error }}</p>
+    </section>
+{% endblock %}

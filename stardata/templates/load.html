@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Load Databases
+{% endblock %}
+
+{% block main %}
+    <section class="container">
+        <h1>Update Database</h1>
+        <p>{{ message }}</p>
+        <ul>
+            <li>This tool assumes the use of a version of the <a href="https://codeberg.org/astronexus/athyg.git">AT-HYG Stellar Database</a> (commit version fc08ca5a74).</li>
+            <li>This tool assumes the use of the <a href="https://www.projectrho.com/public_html/starmaps/supplement/APJ-HABCAT2.zip">HABCAT Database</a>.</li>
+            <li>Place CSV files in the appropriate subfolder of the "table_data" folder. Refer to the README for more information.</li>
+        </ul>
+        <form action="/load" method="post">
+            <input name="table_name" type="hidden" value="catalogue">
+            <button type="submit">Update Catalogue Table</button>
+        </form>
+        <form action="/load" method="post">
+            <input name="table_name" type="hidden" value="habitable">
+            <button type="submit">Update Habitable Table</button>
+        </form>
+    </section>
+{% endblock %}
