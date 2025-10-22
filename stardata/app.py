@@ -142,6 +142,7 @@ def notebook():
         else:
             note_id = int(note_lookup[0]["id"])
             result = query(db, "UPDATE notebook SET notes = ? WHERE id = ?;", (input[1], note_id))
+        star.notes = input[1]
 
         # Redirect to correct page
         if result == True:
