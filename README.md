@@ -59,18 +59,18 @@ The front end is intended to provide a simple user interface for the application
 This application requires that python be installed along with the packages for flask, flask_session, numpy, and pandas. To set up this application on Windows, complete the following steps:
 1. Download the "stardata" folder and move it to the desired location on your computer.
 2. [Install python.](https://www.geeksforgeeks.org/python/how-to-install-python-on-windows/)
-3. [Install pip.](https://www.geeksforgeeks.org/installation-guide/how-to-install-pip-on-windows/)
-4. Use the command '''pip install ???''', substituting the package name for "???", to install flask, flask_session, numpy, and pandas.
+3. [Install pip.](https://www.geeksforgeeks.org/installation-guide/how-to-install-pip-on-windows/) Note that you may need to [add pip to the PATH] (https://www.shellhacks.com/windows-cmd-path-variable-add-to-path-echo-path/) and restart the CMD window.
+4. Use the command ```pip install ???``` substituting the package name for "???", to install flask, flask_session, numpy, and pandas.
 5. Open the command prompt window.
-6. Use the command '''cd /???''', substituting the folder location of the "stardata" folder for "???", to navigate to the folder.
-7. Use the command '''python setup.py''' to generate the stars.db SQL database. A confirmation will appear in the command prompt window if successful.
+6. Use the command ```cd /???```, substituting the folder location of the "stardata" folder for "???", to navigate to the folder.
+7. Use the command ```python setup.py``` to generate the stars.db SQL database. A confirmation will appear in the command prompt window if successful.
 
 # Usage
 ## How to Run
 To use this application:
 1. Open the command prompt window.
-2. Use the command '''cd /???''', substituting the folder location of the "stardata" folder for "???", to navigate to the folder.
-3. Use the command '''python app.py''' to run the application. This will open a browser window.
+2. Use the command ```cd /???```, substituting the folder location of the "stardata" folder for "???", to navigate to the folder.
+3. Use the command ```python app.py``` to run the application. This will open a browser window.
 4. When done using the application, ensure you go back to the command prompt window and press "CTRL+C". You will see the file location reappear when successful.
 
 ## Database Selection
