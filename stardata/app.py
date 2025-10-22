@@ -4,14 +4,17 @@ import webbrowser
 
 from database import query, upload_table
 from flask import Flask, render_template, request
-from flask_session import Session
+"""from flask_session import Session"""
 from starcalcs import calculate_distance, create_star, get_nearby, select_id, update_position
 
-# Configure application and session
+# Configure application
 app = Flask(__name__)
+"""
+# Configure session
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
+"""
 
 # Set database location
 db = os.path.dirname(os.path.abspath(__file__)) + r"\stars.db"
@@ -76,8 +79,7 @@ def index():
     
     else: # request method == "GET"
     # Return page without star data
-        instruction = "Input two stars to calculate the distance between them."
-        return render_template("index.html", catalogues = catalogues, datalists = star_lists, message = instruction, starL = "", starR = "")
+        return render_template("index.html", catalogues = catalogues, datalists = star_lists, message = "", starL = "", starR = "")
     
 
 @app.route("/stardata", methods = ["GET", "POST"])

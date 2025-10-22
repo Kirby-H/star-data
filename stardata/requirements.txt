@@ -1,6 +1,5 @@
 INSTALL
 flask
-flask_session
 numpy
 pandas
 
