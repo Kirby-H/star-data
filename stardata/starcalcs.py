@@ -39,7 +39,6 @@ def create_star(request, catalogues, db):
     # Get correct database query for catalogue
     data_query = ""
     for key, value in catalogues.items():
-        print(key)
         if key == request[1]:
             data_query = value["data_query"]
             append_cat = value["append_cat"]
