@@ -11,13 +11,13 @@
             <p> {{ message }} </p>
         {% endif %}
         <form action="/stardata" method="post">
-            <input list="proper" name="star" placeholder="Sol" type="text" value="Sol">
+            <input list="proper" name="star" placeholder="Sol" type="text">
             <br>
             {% for key in catalogues.keys() %}
                 <label><input name="cat" onclick="setDatalist('cat', 'star')" type="radio" value={{ key }}>{{ key }}</label>
             {% endfor %}  
             <br><br>
-            <input min="0" name="range" placeholder="Enter range (pc)" step="1" type="number" value="10">
+            <label>Range<input min="0" name="range" placeholder="Enter range (pc)" step="1" type="number" value="10"></label>
             <br>
             <button type="submit">Get Star Information</button>
 

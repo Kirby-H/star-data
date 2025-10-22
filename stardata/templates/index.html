@@ -7,7 +7,7 @@
 {% block main %}
     <section class="container">
         <h1>Select Stars</h1>
-        <p> {{ message }} </p>
+        <p>Input two stars to calculate the distance between them.</p>
         <form action="/" method="post">
             <table>
                 <tr>
@@ -17,20 +17,20 @@
                     {% endfor %}  
                 </tr>
                 <tr>
-                    <td><input list="proper" name="starA" placeholder="Sol" style="width: 96%;" type="text" value="Sol"></td>
+                    <td><input list="proper" name="starA" placeholder="Sol" style="width: 96%;" type="text"></td>
                     {% for key in catalogues.keys() %}
                         <td><input name="catA" onclick="setDatalist('catA', 'starA')" type="radio" value={{ key }}></td>
                     {% endfor %}   
                 </tr>           
                 <tr>
-                    <td><input list="proper" name="starB" placeholder="Proxima Centauri" style="width: 96%;" type="text" value="Proxima Centauri"></td>
+                    <td><input list="proper" name="starB" placeholder="Proxima Centauri" style="width: 96%;" type="text"></td>
                     {% for key in catalogues.keys() %}
                         <td><input name="catB" onclick="setDatalist('catB', 'starB')" type="radio" value={{ key }}></td>
                     {% endfor %}
                 </tr>
             </table>
             <br>
-            <input name="year" placeholder="Enter Year" step="1" type="number" value="2000">
+            <label>Enter Year<input name="year" placeholder="Enter Year" step="1" type="number" value="2000"></label>
             <br>
             <button type="submit">Calculate Distance</button>
 
@@ -44,14 +44,17 @@
         </form>
     </section>
 
-    {% if starL == "" %}
-        <section class="container">
+    <section class = "container">
+        {% if message == "" %}
             <h2>Catalogue Key</h2>
             {% for key, value in catalogues.items() %}
                 <p>{{ key }}: {{ value.name }}</p>
             {% endfor %}   
-        </section>
-    {% endif %}
+        {% endif %}
+        {% if message != "" %}
+            <h3>{{ message }}</h3>
+        {% endif %}
+    </section>
 
     {% if starL != "" %}
         <section class="container half left">
