@@ -1,4 +1,6 @@
 # Stardata Project
+#### Video Demo: https://youtu.be/PmSyVe4E9AY
+#### Description: Program to calculate the distance between stars (based on AT-HYG database).
 
 # Table of Contents
 - Overview
@@ -31,21 +33,8 @@ This application requires that python be installed along with the packages for f
 To use this application:
 1. Open the command prompt window.
 2. Use the command ```cd /???```, substituting the folder location of the "stardata" folder for "???", to navigate to the folder.
-3. Use the command ```python app.py``` to run the application. This will open a browser window.
+3. Use the command ```python app.py``` or ```py app.py``` to run the application. This will open a browser window.
 4. When done using the application, ensure you go back to the command prompt window and press "CTRL+C". You will see the file location reappear when successful.
-
-## Database Selection
-The [AT-HYG stellar database](https://codeberg.org/astronexus/athyg.git) is over 400MB when decompressed, which is too large to include as a single file on GitHub even when compressed. This project as supplied includes a smaller subset of the database.
-
-This smaller subset can be replaced either with the full AT-HYG or any of the subsets that use the same schema, available under "data" at the link above.
-
-To update the table data:
-- Download the appropriate csv file.
-- Replace the csv file in the stardata\table_data\catalogue or stardata\table_data\habitable folder with the new csv file.
-- Navigate to the "Update Database" page.
-- Select the option to update.
-
-This should automatically drop the existing table and load the csv as a table in its place.
 
 ## Front End
 The Flask framework has been used to allow rendering of HTML pages via python script.
@@ -62,6 +51,30 @@ The front end is intended to provide a simple user interface for the application
 - notebook.html: User can add notes to stars for later reference.
 - load.html: User can load new databases into "catalogue" and "habitable" tables.
 - error.html: Shows when an error occurs during operation.
+
+#### Calculate Distance
+Use the drop-down menus to select a star. The catalogue selection can be changed using the radio buttons. The default year for calculations is 2000 (the epoch of the data in the AT-HYG database) but this can be updated in the text input. Negative year values are BC.
+
+#### See Star Data
+Use the drop-down menu to select a star. The catalogue selection can be changed using the radio buttons. Use the text input to provide a range in parsecs for nearby stars.
+
+Once the star data has loaded, the option to update notes on the star is available in the "notes" section by clicking the button.
+
+#### Notebook
+Update the notes in the text box and click the button to submit changes.
+
+#### Update Database
+The [AT-HYG stellar database](https://codeberg.org/astronexus/athyg.git) is over 400MB when decompressed, which is too large to include as a single file on GitHub even when compressed. This project as supplied includes a smaller subset of the database.
+
+This smaller subset can be replaced either with the full AT-HYG or any of the subsets that use the same schema, available under "data" at the link above.
+
+To update the table data:
+- Download the appropriate csv file.
+- Replace the csv file in the stardata\table_data\catalogue or stardata\table_data\habitable folder with the new csv file.
+- Navigate to the "Update Database" page.
+- Select the option to update.
+
+This should automatically drop the existing table and load the csv as a table in its place.
 
 ## Back End
 Python was used due to the large range of modules and frameworks available to support the interactions with databases, webpages, and mathematical calculations.
