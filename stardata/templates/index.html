@@ -17,13 +17,13 @@
                     {% endfor %}  
                 </tr>
                 <tr>
-                    <td><input list="proper" name="starA" placeholder="Sol" style="width: 96%;" type="text"></td>
+                    <td><input list="proper" name="starA" placeholder="Enter Star eg: Sol" style="width: 96%;" type="text"></td>
                     {% for key in catalogues.keys() %}
                         <td><input name="catA" onclick="setDatalist('catA', 'starA')" type="radio" value={{ key }}></td>
                     {% endfor %}   
                 </tr>           
                 <tr>
-                    <td><input list="proper" name="starB" placeholder="Proxima Centauri" style="width: 96%;" type="text"></td>
+                    <td><input list="proper" name="starB" placeholder="Enter Star eg: Proxima Centauri" style="width: 96%;" type="text"></td>
                     {% for key in catalogues.keys() %}
                         <td><input name="catB" onclick="setDatalist('catB', 'starB')" type="radio" value={{ key }}></td>
                     {% endfor %}

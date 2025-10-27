@@ -11,7 +11,7 @@
             <p> {{ message }} </p>
         {% endif %}
         <form action="/stardata" method="post">
-            <input list="proper" name="star" placeholder="Sol" type="text">
+            <input list="proper" name="star" placeholder="Enter Star eg: Sol" type="text">
             <br>
             {% for key in catalogues.keys() %}
                 <label><input name="cat" onclick="setDatalist('cat', 'star')" type="radio" value={{ key }}>{{ key }}</label>
